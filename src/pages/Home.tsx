@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import About from "./About";
 import Services from "./Services";
+import Testimonials from "./Testimonials";
 
 const Home: React.FC = () => (
   <HomeContainer>
@@ -17,6 +18,10 @@ const Home: React.FC = () => (
 
     <Section>
       <Services />
+    </Section>
+
+    <Section>
+      <Testimonials />
     </Section>
 
     <Footer>
