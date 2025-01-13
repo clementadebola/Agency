@@ -6,6 +6,7 @@ const About: React.FC = () => {
     <AboutContainer>
       <Content>
         <h2>About Us</h2>
+        
         <p>
           At <span>Your Software Agency</span>, we specialize in building innovative
           software solutions that empower businesses to thrive in the digital age.
