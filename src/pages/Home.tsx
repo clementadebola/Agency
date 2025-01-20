@@ -4,6 +4,7 @@ import About from "./About";
 import Services from "./Services";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
+import ShowcasePage from "./ShowcasePage";
 
 const Home: React.FC = () => (
   <HomeContainer>
@@ -15,6 +16,10 @@ const Home: React.FC = () => (
 
     <Section>
       <About />
+    </Section>
+    
+    <Section>
+      <ShowcasePage />
     </Section>
 
     <Section>
