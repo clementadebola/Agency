@@ -7,23 +7,23 @@ import webimg from '../assets/webbb.jpg';
 gsap.registerPlugin(ScrollTrigger);
 
 const ShowcasePage = () => {
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (imageRef.current) {
       gsap.fromTo(
         imageRef.current,
-        { y: 100, rotate: -10, opacity: 0.5, scale: 0.9 },
+        { rotateX: 20, rotateY: -20, translateZ: -50, opacity: 0.7 },
         {
-          y: 0,
-          rotate: 10,
+          rotateX: 0,
+          rotateY: 0,
+          translateZ: 0,
           opacity: 1,
-          scale: 1,
           scrollTrigger: {
             trigger: imageRef.current,
-            start: 'top 80%', // Starts animation when the image enters the viewport
-            end: 'top 50%', // Ends when the image reaches 50% of the viewport height
-            scrub: true, // Smoothly ties the animation to scroll progress
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: true,
           },
         }
       );
@@ -34,7 +34,9 @@ const ShowcasePage = () => {
     <Container>
       <Content>
         <h1>Showcase Your Stunning Website</h1>
-        <StyledImage ref={imageRef} src={webimg} alt="web design" />
+        <ImageWrapper ref={imageRef}>
+          <StyledImage src={webimg} alt="web design" />
+        </ImageWrapper>
       </Content>
     </Container>
   );
@@ -62,8 +64,13 @@ const Content = styled.div`
   }
 `;
 
-const StyledImage = styled.img`
+const ImageWrapper = styled.div`
+  perspective: 1000px; /* Enables 3D effect */
   max-width: 600px;
+  width: 100%;
+`;
+
+const StyledImage = styled.img`
   width: 100%;
   height: auto;
   border-radius: 15px;
